@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatMintColor(), withContentStyle: UIContentStyle.Contrast)
+        Chameleon.setGlobalThemeUsingPrimaryColor(UIColor.flatNavyBlueColorDark(), withContentStyle: UIContentStyle.Contrast)
         
         return true
     }

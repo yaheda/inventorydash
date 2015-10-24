@@ -2,11 +2,14 @@ PODS:
   - ChameleonFramework (2.0.4):
     - ChameleonFramework/Default (= 2.0.4)
   - ChameleonFramework/Default (2.0.4)
+  - Charts (2.1.4)
 
 DEPENDENCIES:
   - ChameleonFramework
+  - Charts
 
 SPEC CHECKSUMS:
   ChameleonFramework: 5abe69b1f2a6cc79c3c435fcd9d3d855748225ee
+  Charts: 870589b6b4bf8468baacea8869c28983d71f602c
 
 COCOAPODS: 0.39.0
