@@ -3,13 +3,16 @@ PODS:
     - ChameleonFramework/Default (= 2.0.4)
   - ChameleonFramework/Default (2.0.4)
   - Charts (2.1.4)
+  - Popover (0.7.0)
 
 DEPENDENCIES:
   - ChameleonFramework
   - Charts
+  - Popover
 
 SPEC CHECKSUMS:
   ChameleonFramework: 5abe69b1f2a6cc79c3c435fcd9d3d855748225ee
   Charts: 870589b6b4bf8468baacea8869c28983d71f602c
+  Popover: bd417f06cfdd400e58084525a921b4856a2c62f5
 
 COCOAPODS: 0.39.0

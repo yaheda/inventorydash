@@ -6,6 +6,7 @@ use_frameworks!
 target 'InventoryDash' do
 pod 'ChameleonFramework'
 pod 'Charts'
+pod 'Popover'
 end
 
 target 'InventoryDashTests' do

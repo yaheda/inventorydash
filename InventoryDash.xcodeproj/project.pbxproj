@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		738AF5D751A62B6152F653F8 /* Pods_InventoryDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394356D5B8772F5F94054ED7 /* Pods_InventoryDash.framework */; };
+		D61161C61BDBA39F0006A321 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161C51BDBA39F0006A321 /* Helper.swift */; settings = {ASSET_TAGS = (); }; };
+		D61161D11BDCBBFD0006A321 /* DashExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D61161D31BDCD71D0006A321 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D21BDCD71C0006A321 /* Expense.swift */; settings = {ASSET_TAGS = (); }; };
 		D63A348B1BD3A1BA00EFFA2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A348A1BD3A1BA00EFFA2F /* AppDelegate.swift */; };
 		D63A348D1BD3A1BA00EFFA2F /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A348C1BD3A1BA00EFFA2F /* DashboardViewController.swift */; };
 		D63A34901BD3A1BA00EFFA2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63A348E1BD3A1BA00EFFA2F /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		310C1A2E19D70DF2EE176B3D /* Pods-InventoryDash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryDash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryDash/Pods-InventoryDash.debug.xcconfig"; sourceTree = "<group>"; };
 		394356D5B8772F5F94054ED7 /* Pods_InventoryDash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryDash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E00C1FCA371D9EBD26710C /* Pods-InventoryDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryDash.release.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryDash/Pods-InventoryDash.release.xcconfig"; sourceTree = "<group>"; };
+		D61161C51BDBA39F0006A321 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		D61161D21BDCD71C0006A321 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		D63A34871BD3A1BA00EFFA2F /* InventoryDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D63A348A1BD3A1BA00EFFA2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D63A348C1BD3A1BA00EFFA2F /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D61161C71BDBA3B00006A321 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D61161C51BDBA39F0006A321 /* Helper.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		D63A347E1BD3A1B900EFFA2F = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +143,7 @@
 		D63A34891BD3A1BA00EFFA2F /* InventoryDash */ = {
 			isa = PBXGroup;
 			children = (
+				D61161C71BDBA3B00006A321 /* Utils */,
 				D6F260E91BD41DB6007DD24B /* Libs */,
 				D6F260E81BD41DA8007DD24B /* Models */,
 				D6F260E71BD41D99007DD24B /* Controllers */,
@@ -181,6 +196,8 @@
 		D6F260E81BD41DA8007DD24B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */,
+				D61161D21BDCD71C0006A321 /* Expense.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -258,6 +275,7 @@
 		D63A347F1BD3A1BA00EFFA2F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Aboubakar Yaheda";
 				TargetAttributes = {
@@ -378,9 +396,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */,
+				D61161C61BDBA39F0006A321 /* Helper.swift in Sources */,
 				D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */,
 				D66EB89F1BD57979003251B7 /* MenuTableViewController.swift in Sources */,
+				D61161D11BDCBBFD0006A321 /* DashExpenseTableViewCell.swift in Sources */,
 				D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */,
+				D61161D31BDCD71D0006A321 /* Expense.swift in Sources */,
 				D63A348D1BD3A1BA00EFFA2F /* DashboardViewController.swift in Sources */,
 				D63A348B1BD3A1BA00EFFA2F /* AppDelegate.swift in Sources */,
 			);
@@ -525,11 +546,14 @@
 			baseConfigurationReference = 310C1A2E19D70DF2EE176B3D /* Pods-InventoryDash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = InventoryDash/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kmer.nosuca.InventoryDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -538,11 +562,13 @@
 			baseConfigurationReference = 99E00C1FCA371D9EBD26710C /* Pods-InventoryDash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = InventoryDash/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kmer.nosuca.InventoryDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

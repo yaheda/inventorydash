@@ -246,14 +246,12 @@ public class ENSideMenu : NSObject, UIGestureRecognizerDelegate {
         
         sourceView.addSubview(sideMenuContainerView)
         
-        //sideMenuContainerView.backgroundColor = UIColor.greenColor()
-        
         if (NSClassFromString("UIVisualEffectView") != nil) {
             // Add blur view
-            let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+            let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .ExtraLight)) as UIVisualEffectView
             visualEffectView.frame = sideMenuContainerView.bounds
             visualEffectView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-            //sideMenuContainerView.addSubview(visualEffectView)
+            sideMenuContainerView.addSubview(visualEffectView)
         }
         else {
             // TODO: add blur for ios 7
