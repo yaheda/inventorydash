@@ -19,6 +19,8 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var expensesPieChart: PieChartView!
+    @IBOutlet weak var netIncomeChart: CombinedChartView!
+    
     
     
     var expenses: [Expense]!
@@ -40,7 +42,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
             
         
         buidExpensesPieChart(expenses: expenses)
-        
+        buildNetIncomeChart()
         
         
         //expensesPieChart.highlightValue(xIndex: 0, dataSetIndex: 0, callDelegate: true)
@@ -132,6 +134,37 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         
         expensesPieChart.notifyDataSetChanged()
         //expensesPieChart.legend.position = ChartLegend.ChartLegendPosition.LeftOfChart
+    }
+    
+    func buildNetIncomeChart() {
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+        let unitsSold1 = [[60.0,-20], [40,-60], [60,-30], [30,-10], [35,-12], [16,-20]]
+        
+        var dataEntries: [ChartDataEntry] = []
+        var dataEntries1: [BarChartDataEntry] = []
+        for i in 0..<months.count {
+            
+            let netIncome = unitsSold1[i][0] + unitsSold1[i][1]
+            let dataEntry = ChartDataEntry(value: netIncome, xIndex: i)
+            dataEntries.append(dataEntry)
+            
+            let dataEntry1 = BarChartDataEntry(values: unitsSold1[i], xIndex: i)
+            dataEntries1.append(dataEntry1)
+        }
+        
+        
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let lineChartData = LineChartData(xVals: months, dataSet: lineChartDataSet)
+        
+        let chartDataSet = BarChartDataSet(yVals: dataEntries1, label: "Units Sold1")
+        let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        chartDataSet.colors = [UIColor.flatGreenColor(), UIColor.flatSkyBlueColor()]
+        
+        let combinedChartData = CombinedChartData(xVals: months)
+        combinedChartData.lineData = lineChartData
+        combinedChartData.barData = chartData
+        
+        netIncomeChart.data = combinedChartData
     }
 
     func setChart(dataPoints: [String], values: [Double]) {
