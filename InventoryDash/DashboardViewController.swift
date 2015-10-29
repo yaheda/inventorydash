@@ -10,6 +10,7 @@ import UIKit
 import Charts
 import Foundation
 import Popover
+import SwiftDate
 
 class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDelegate, UITableViewDelegate {
 
@@ -24,6 +25,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     
     
     var expenses: [Expense]!
+    var products: [Product]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +41,18 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         expenses.append(Expense(name: "Legal and Professional Services", value: 3900, color: UIColor.flatBlueColor()))
         expenses.append(Expense(name: "Job Expenses", value: 2160, color: UIColor.flatBlueColor()))
         expenses.append(Expense(name: "Everything else", value: 4190, color: UIColor.flatBlueColor()))
-            
-        
         buidExpensesPieChart(expenses: expenses)
+        
+        
+        products = [Product]()
+        let date1 = NSDate.date(fromString: "2015-07-26", format: DateFormat.Custom("YYYY-MM-DD"))!
+        products.append(Product(name: "Sugar Cubes", price: 35, quantity: 10000, date: date1))
+        let date2 = NSDate.date(fromString: "2015-07-26", format: DateFormat.Custom("YYYY-MM-DD"))!
+        products.append(Product(name: "Sugar Sachets - White", price: 49, quantity: 10000, date: date2))
+        let date3 = NSDate.date(fromString: "2015-07-26", format: DateFormat.Custom("YYYY-MM-DD"))!
+        products.append(Product(name: "Sugar Sachets - Brown", price: 44, quantity: 10000, date: date3))
+        
+        
         buildNetIncomeChart()
         
         

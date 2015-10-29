@@ -7,6 +7,7 @@ target 'InventoryDash' do
 pod 'ChameleonFramework'
 pod 'Charts'
 pod 'Popover'
+pod 'SwiftDate'
 end
 
 target 'InventoryDashTests' do
