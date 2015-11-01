@@ -11,16 +11,16 @@ import Foundation
 
 class Product: NSObject {
 
+    var id: Int
     var name: String
-    var price: Double = 0.0
-    var quantity: Int
-    var date: NSDate
+    var price: Double
     
-    init(name: String, price: Double, quantity: Int, date: NSDate) {
+    var lineItems: [LineItem]!
+    
+    init(id: Int, name: String, price: Double) {
+        self.id = id
         self.name = name
         self.price = price
-        self.quantity = quantity
-        self.date = date
     }
     
 }

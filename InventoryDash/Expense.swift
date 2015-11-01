@@ -10,13 +10,11 @@ import UIKit
 
 class Expense: NSObject {
 
+    var id: Int
     var name: String
-    var value: Double
-    var color: UIColor
     
-    init(name: String, value: Double, color: UIColor) {
+    init(id: Int, name: String) {
+        self.id = id
         self.name = name
-        self.value = value
-        self.color = color
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		738AF5D751A62B6152F653F8 /* Pods_InventoryDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394356D5B8772F5F94054ED7 /* Pods_InventoryDash.framework */; };
+		D60E34411BE65ACC00875785 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E34401BE65ACC00875785 /* ExpenseItem.swift */; settings = {ASSET_TAGS = (); }; };
 		D61161C61BDBA39F0006A321 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161C51BDBA39F0006A321 /* Helper.swift */; settings = {ASSET_TAGS = (); }; };
 		D61161D11BDCBBFD0006A321 /* DashExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D61161D31BDCD71D0006A321 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D21BDCD71C0006A321 /* Expense.swift */; settings = {ASSET_TAGS = (); }; };
@@ -18,6 +19,9 @@
 		D63A34951BD3A1BA00EFFA2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63A34931BD3A1BA00EFFA2F /* LaunchScreen.storyboard */; };
 		D63A34A01BD3A1BA00EFFA2F /* InventoryDashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A349F1BD3A1BA00EFFA2F /* InventoryDashTests.swift */; };
 		D63A34AB1BD3A1BA00EFFA2F /* InventoryDashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A34AA1BD3A1BA00EFFA2F /* InventoryDashUITests.swift */; };
+		D64DB67F1BE3EDB30035CCD6 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */; settings = {ASSET_TAGS = (); }; };
+		D64DB6811BE3F3D90035CCD6 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6801BE3F3D90035CCD6 /* Invoice.swift */; settings = {ASSET_TAGS = (); }; };
+		D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */; settings = {ASSET_TAGS = (); }; };
 		D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8981BD576A1003251B7 /* ENSideMenu.swift */; settings = {ASSET_TAGS = (); }; };
 		D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB89C1BD577E2003251B7 /* NavigationController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +50,7 @@
 		310C1A2E19D70DF2EE176B3D /* Pods-InventoryDash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryDash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryDash/Pods-InventoryDash.debug.xcconfig"; sourceTree = "<group>"; };
 		394356D5B8772F5F94054ED7 /* Pods_InventoryDash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InventoryDash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E00C1FCA371D9EBD26710C /* Pods-InventoryDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InventoryDash.release.xcconfig"; path = "Pods/Target Support Files/Pods-InventoryDash/Pods-InventoryDash.release.xcconfig"; sourceTree = "<group>"; };
+		D60E34401BE65ACC00875785 /* ExpenseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		D61161C51BDBA39F0006A321 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		D61161D21BDCD71C0006A321 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
@@ -62,6 +67,9 @@
 		D63A34A61BD3A1BA00EFFA2F /* InventoryDashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoryDashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D63A34AA1BD3A1BA00EFFA2F /* InventoryDashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDashUITests.swift; sourceTree = "<group>"; };
 		D63A34AC1BD3A1BA00EFFA2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
+		D64DB6801BE3F3D90035CCD6 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryAPI.swift; sourceTree = "<group>"; };
 		D66EB8981BD576A1003251B7 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D66EB89C1BD577E2003251B7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -145,8 +153,9 @@
 		D63A34891BD3A1BA00EFFA2F /* InventoryDash */ = {
 			isa = PBXGroup;
 			children = (
-				D61161C71BDBA3B00006A321 /* Utils */,
 				D6F260E91BD41DB6007DD24B /* Libs */,
+				D61161C71BDBA3B00006A321 /* Utils */,
+				D64DB6821BE3F66E0035CCD6 /* Datasource */,
 				D6F260E81BD41DA8007DD24B /* Models */,
 				D6F260E71BD41D99007DD24B /* Controllers */,
 				D63A348A1BD3A1BA00EFFA2F /* AppDelegate.swift */,
@@ -176,6 +185,14 @@
 			path = InventoryDashUITests;
 			sourceTree = "<group>";
 		};
+		D64DB6821BE3F66E0035CCD6 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */,
+			);
+			name = Datasource;
+			sourceTree = "<group>";
+		};
 		D66EB8971BD57692003251B7 /* ENSlideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +218,9 @@
 				D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */,
 				D61161D21BDCD71C0006A321 /* Expense.swift */,
 				D6E9B0AA1BE1653A00ED6D8C /* Product.swift */,
+				D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */,
+				D64DB6801BE3F3D90035CCD6 /* Invoice.swift */,
+				D60E34401BE65ACC00875785 /* ExpenseItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -399,13 +419,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */,
+				D64DB6811BE3F3D90035CCD6 /* Invoice.swift in Sources */,
+				D64DB67F1BE3EDB30035CCD6 /* LineItem.swift in Sources */,
 				D61161C61BDBA39F0006A321 /* Helper.swift in Sources */,
 				D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */,
 				D66EB89F1BD57979003251B7 /* MenuTableViewController.swift in Sources */,
 				D61161D11BDCBBFD0006A321 /* DashExpenseTableViewCell.swift in Sources */,
+				D60E34411BE65ACC00875785 /* ExpenseItem.swift in Sources */,
 				D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */,
 				D61161D31BDCD71D0006A321 /* Expense.swift in Sources */,
 				D63A348D1BD3A1BA00EFFA2F /* DashboardViewController.swift in Sources */,
+				D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */,
 				D6E9B0AB1BE1653A00ED6D8C /* Product.swift in Sources */,
 				D63A348B1BD3A1BA00EFFA2F /* AppDelegate.swift in Sources */,
 			);
