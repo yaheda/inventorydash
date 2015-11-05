@@ -13,6 +13,7 @@ class DashExpenseTableViewCell: UITableViewCell {
     @IBOutlet weak var colorView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -22,6 +22,7 @@
 		D64DB67F1BE3EDB30035CCD6 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */; settings = {ASSET_TAGS = (); }; };
 		D64DB6811BE3F3D90035CCD6 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6801BE3F3D90035CCD6 /* Invoice.swift */; settings = {ASSET_TAGS = (); }; };
 		D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */; settings = {ASSET_TAGS = (); }; };
+		D6577EBF1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 		D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8981BD576A1003251B7 /* ENSideMenu.swift */; settings = {ASSET_TAGS = (); }; };
 		D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 		D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB89C1BD577E2003251B7 /* NavigationController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -70,6 +71,7 @@
 		D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
 		D64DB6801BE3F3D90035CCD6 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryAPI.swift; sourceTree = "<group>"; };
+		D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorisedExpenseItemViewModel.swift; sourceTree = "<group>"; };
 		D66EB8981BD576A1003251B7 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D66EB89C1BD577E2003251B7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				D6F260E91BD41DB6007DD24B /* Libs */,
 				D61161C71BDBA3B00006A321 /* Utils */,
 				D64DB6821BE3F66E0035CCD6 /* Datasource */,
+				D6577EBD1BE8E85600CC44F0 /* ViewModel */,
 				D6F260E81BD41DA8007DD24B /* Models */,
 				D6F260E71BD41D99007DD24B /* Controllers */,
 				D63A348A1BD3A1BA00EFFA2F /* AppDelegate.swift */,
@@ -193,6 +196,15 @@
 			name = Datasource;
 			sourceTree = "<group>";
 		};
+		D6577EBD1BE8E85600CC44F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */,
+				D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		D66EB8971BD57692003251B7 /* ENSlideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +227,6 @@
 		D6F260E81BD41DA8007DD24B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */,
 				D61161D21BDCD71C0006A321 /* Expense.swift */,
 				D6E9B0AA1BE1653A00ED6D8C /* Product.swift */,
 				D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */,
@@ -430,6 +441,7 @@
 				D61161D31BDCD71D0006A321 /* Expense.swift in Sources */,
 				D63A348D1BD3A1BA00EFFA2F /* DashboardViewController.swift in Sources */,
 				D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */,
+				D6577EBF1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift in Sources */,
 				D6E9B0AB1BE1653A00ED6D8C /* Product.swift in Sources */,
 				D63A348B1BD3A1BA00EFFA2F /* AppDelegate.swift in Sources */,
 			);

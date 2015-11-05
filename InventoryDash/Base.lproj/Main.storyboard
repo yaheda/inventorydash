@@ -67,7 +67,7 @@
                                         <rect key="frame" x="8" y="0.0" width="98" height="33"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-ac-80F">
@@ -96,17 +96,17 @@
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TkJ-1W-mGw">
-                                <rect key="frame" x="20" y="195" width="984" height="275"/>
+                                <rect key="frame" x="20" y="195" width="984" height="254"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-eC-kFs">
-                                        <rect key="frame" x="8" y="0.0" width="315" height="33"/>
+                                        <rect key="frame" x="8" y="0.0" width="168" height="33"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 52,820" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sU-Dr-nbF">
-                                        <rect key="frame" x="8" y="74" width="168" height="21"/>
+                                        <rect key="frame" x="8" y="75" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="25" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rP9-Jr-fnO">
-                                        <rect key="frame" x="184" y="41" width="436" height="226"/>
+                                        <rect key="frame" x="184" y="8" width="436" height="226"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -136,17 +136,24 @@
                                                             <color key="backgroundColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salaries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUW-eD-hDU">
-                                                            <rect key="frame" x="134" y="4" width="302" height="21"/>
+                                                            <rect key="frame" x="134" y="4" width="247" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9O-BM-vNa">
                                                             <rect key="frame" x="53" y="4" width="73" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(x10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLJ-3Z-GpZ">
+                                                            <rect key="frame" x="389" y="4" width="39" height="21"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -157,6 +164,7 @@
                                                 <connections>
                                                     <outlet property="colorView" destination="WjS-Bg-Cwy" id="DBS-px-2CK"/>
                                                     <outlet property="priceLabel" destination="s9O-BM-vNa" id="IQA-pu-S2e"/>
+                                                    <outlet property="quantityLabel" destination="KLJ-3Z-GpZ" id="IOE-px-kUn"/>
                                                     <outlet property="titleLabel" destination="YUW-eD-hDU" id="hOW-HQ-kbs"/>
                                                 </connections>
                                             </tableViewCell>
@@ -167,7 +175,7 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZk-1T-dpk" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="628" y="41" width="348" height="226"/>
+                                        <rect key="frame" x="628" y="8" width="348" height="226"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -176,10 +184,10 @@
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1j-UY-JjV">
-                                <rect key="frame" x="20" y="480" width="984" height="270"/>
+                                <rect key="frame" x="20" y="457" width="984" height="293"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14g-Tz-KGP" customClass="CombinedChartView" customModule="Charts">
-                                        <rect key="frame" x="184" y="8" width="792" height="254"/>
+                                        <rect key="frame" x="184" y="59" width="792" height="226"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -187,55 +195,69 @@
                                         <rect key="frame" x="8" y="8" width="168" height="33"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Net Income" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUb-jH-tkx">
-                                        <rect key="frame" x="8" y="105" width="168" height="21"/>
+                                        <rect key="frame" x="8" y="110" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-YN-UEq">
-                                        <rect key="frame" x="30" y="241" width="168" height="21"/>
+                                        <rect key="frame" x="30" y="264" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 17,740" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikC-gq-c8J">
-                                        <rect key="frame" x="8" y="76" width="168" height="21"/>
+                                        <rect key="frame" x="8" y="75" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 39,600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-3h-IbK">
-                                        <rect key="frame" x="30" y="174" width="168" height="21"/>
+                                        <rect key="frame" x="30" y="197" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 21,860" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Q2-nvs">
-                                        <rect key="frame" x="31" y="222" width="168" height="21"/>
+                                        <rect key="frame" x="31" y="245" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3J-lr-2bc">
-                                        <rect key="frame" x="8" y="174" width="14" height="40"/>
+                                        <rect key="frame" x="8" y="197" width="14" height="40"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.23018704349999999" green="0.77713233230000001" blue="0.31589496140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-xE-dt0">
-                                        <rect key="frame" x="8" y="222" width="14" height="40"/>
+                                        <rect key="frame" x="8" y="245" width="14" height="40"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Income" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HL-3x-V5c">
-                                        <rect key="frame" x="30" y="193" width="168" height="21"/>
+                                        <rect key="frame" x="30" y="216" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eRU-90-sid">
+                                        <rect key="frame" x="184" y="11" width="792" height="29"/>
+                                        <animations/>
+                                        <segments>
+                                            <segment title="Last 30 Days"/>
+                                            <segment title="Last 90 Days"/>
+                                            <segment title="Last 180 Days"/>
+                                            <segment title="Last 360 Days"/>
+                                            <segment title="Last 720 Days"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="netIncomDayFilter_IndexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="J42-hH-pLY"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -264,6 +286,7 @@
                         <outlet property="expensesPieChart" destination="bZk-1T-dpk" id="RkZ-Uw-kzz"/>
                         <outlet property="expensesTableView" destination="rP9-Jr-fnO" id="erw-pg-03e"/>
                         <outlet property="netIncomeChart" destination="14g-Tz-KGP" id="Fby-bG-lnZ"/>
+                        <outlet property="netIncomeDayFilter" destination="eRU-90-sid" id="6pJ-Uy-ZMr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

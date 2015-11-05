@@ -46,11 +46,11 @@ class InventoryAPI: NSObject {
             let month = i < 10 ? "0\(i)" : i.description
             //let date = "2015/\(month)/01".toDate(formatString: "yyyy/MM/dd")!
             let date = NSDate.date(fromString: "2015-\(month)-01T00:00:00.000Z", format: DateFormat.ISO8601)!
-            expenseItems.append(ExpenseItem(expenseId: 1, cost: Double(RandomInt(min: 5000, max: 8000)), date: date, color: UIColor.flatBlueColor()))
-            expenseItems.append(ExpenseItem(expenseId: 2, cost: Double(RandomInt(min: 3000, max: 4500)), date: date, color: UIColor.flatBlueColor()))
-            expenseItems.append(ExpenseItem(expenseId: 3, cost: Double(RandomInt(min: 3000, max: 4000)), date: date, color: UIColor.flatBlueColor()))
-            expenseItems.append(ExpenseItem(expenseId: 4, cost: Double(RandomInt(min: 2000, max: 3000)), date: date, color: UIColor.flatBlueColor()))
-            expenseItems.append(ExpenseItem(expenseId: 5, cost: Double(RandomInt(min: 2000, max: 7000)), date: date, color: UIColor.flatBlueColor()))
+            expenseItems.append(ExpenseItem(expenseId: 1, cost: Double(RandomInt(min: 5000, max: 8000)), date: date))
+            expenseItems.append(ExpenseItem(expenseId: 2, cost: Double(RandomInt(min: 3000, max: 4500)), date: date))
+            expenseItems.append(ExpenseItem(expenseId: 3, cost: Double(RandomInt(min: 3000, max: 4000)), date: date))
+            expenseItems.append(ExpenseItem(expenseId: 4, cost: Double(RandomInt(min: 2000, max: 3000)), date: date))
+            expenseItems.append(ExpenseItem(expenseId: 5, cost: Double(RandomInt(min: 2000, max: 7000)), date: date))
         }
     }
     

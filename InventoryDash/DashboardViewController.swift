@@ -12,14 +12,12 @@ import Foundation
 import Popover
 import SwiftDate
 
-enum FilterTypes {
-    case last30Days
-    case thisMonth
-    case thisQuarter
-    case thisYear
-    case lastMonth
-    case lastQuarter
-    case lastYear
+enum FilterTypes: Int {
+    case Last30Days = 1
+    case Last90Days = 3
+    case Last180Days = 6
+    case Last360Days = 12
+    case Last720Days = 24
 }
 
 class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDelegate, UITableViewDelegate {
@@ -32,11 +30,17 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     @IBOutlet weak var expensesPieChart: PieChartView!
     @IBOutlet weak var netIncomeChart: CombinedChartView!
     
-    var expenseItems: [ExpenseItem]!
+    
+    
+    @IBOutlet weak var netIncomeDayFilter: UISegmentedControl!
+    //var expenseItems: [ExpenseItem]!
+    //var categorisedExpenseItems: [Int:[ExpenseItem]]!
+    var categorisedExpenseItems : [CategorisedExpenseItemViewModel] = []
     
     var inventoryAPI: InventoryAPI!
     
     var fromDate: NSDate!
+    var filterType: FilterTypes = FilterTypes.Last360Days
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,19 +48,21 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         self.sideMenuController()?.sideMenu?.delegate = self
         expensesPieChart.delegate = self
         
+        
+        
         inventoryAPI = InventoryAPI()
+        
+        
+        
+        let last30DaysDate = NSDate().add(componentsDict: ["month":-1])!.toLocalTime()
+        let expenseItems = inventoryAPI.getExpenseItems(fromDate: last30DaysDate)
+        categorisedExpenseItems = getCategoriseExpenseItems(expenseItems)
+        
+        buidExpensesPieChart(categorisedExpenseItems: categorisedExpenseItems)
         
         fromDate = "2015/01/01".toDate(formatString: "yyyy/MM/dd")
         
-        let last30DaysDate = NSDate().add(componentsDict: ["month":-1])!.toLocalTime()
-        expenseItems = inventoryAPI.getExpenseItems(fromDate: last30DaysDate)
-        
-        buidExpensesPieChart(expenseItems: expenseItems)
-        
-        
         let invoices = inventoryAPI.getInvoices(fromDate: fromDate)
-        
-        
         let netIncomeExpenseItems = inventoryAPI.getExpenseItems(fromDate: fromDate)
         buildNetIncomeChart(invoices: invoices, expenseItems: netIncomeExpenseItems)
         
@@ -69,16 +75,22 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         //popover.show(aView, point: startPoint)
     }
     
-    func getCategoriseExpenseItems(expenseItems: [ExpenseItem]) -> [Int:[ExpenseItem]] {
-        var categorisedExpenseItems = [Int:[ExpenseItem]]()
+    func getCategoriseExpenseItems(expenseItems: [ExpenseItem]) -> [CategorisedExpenseItemViewModel] {
+        var categorisedExpenseItems = [CategorisedExpenseItemViewModel]()
         for expenseItem in expenseItems {
-            if let _ = categorisedExpenseItems[expenseItem.expense.id] as [ExpenseItem]! {
-                categorisedExpenseItems[expenseItem.expense.id]?.append(expenseItem)
+            
+            if let categorisedExpenseItem = categorisedExpenseItems.filter({ $0.expenseId == expenseItem.expenseId }).first {
+                categorisedExpenseItem.totalCost += expenseItem.cost
+                categorisedExpenseItem.quantity++
             } else {
-                categorisedExpenseItems[expenseItem.expense.id] = [ExpenseItem]()
-                categorisedExpenseItems[expenseItem.expense.id]?.append(expenseItem)
+                categorisedExpenseItems.append(CategorisedExpenseItemViewModel(
+                    expenseId: expenseItem.expenseId,
+                    expenseName: expenseItem.expense.name,
+                    totalCost: expenseItem.cost,
+                    quantity: 1))
             }
         }
+    
         return categorisedExpenseItems
     }
     
@@ -88,7 +100,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return expenseItems.count
+        return categorisedExpenseItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -97,9 +109,10 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
             cell = NSBundle.mainBundle().loadNibNamed("dashExpenseCell", owner: self, options: nil)[0] as! DashExpenseTableViewCell;
         }
         
-        cell.colorView.backgroundColor = expenseItems[indexPath.row].color
-        cell.priceLabel.text = "R " + expenseItems[indexPath.row].cost.description
-        cell.titleLabel.text = expenseItems[indexPath.row].expense.name
+        cell.colorView.backgroundColor = categorisedExpenseItems[indexPath.row].color
+        cell.priceLabel.text = "R \(categorisedExpenseItems[indexPath.row].totalCost)"
+        cell.titleLabel.text = categorisedExpenseItems[indexPath.row].expenseName
+        cell.quantityLabel.text = "x\(categorisedExpenseItems[indexPath.row].quantity)"
         
         return cell as DashExpenseTableViewCell
     }
@@ -120,7 +133,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         
         let colorView = UIView()
-        colorView.backgroundColor = expenseItems[indexPath.row].color
+        colorView.backgroundColor = categorisedExpenseItems[indexPath.row].color
         cell?.selectedBackgroundView = colorView
     }
     
@@ -131,34 +144,27 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         self.tableView(expensesTableView, didSelectRowAtIndexPath: indexPath)
     }
     
-    func buidExpensesPieChart(expenseItems expenseItems: [ExpenseItem]) {
+    func buidExpensesPieChart(categorisedExpenseItems categorisedExpenseItems:  [CategorisedExpenseItemViewModel] ) {
         expensesPieChart.descriptionText = ""
         expensesPieChart.usePercentValuesEnabled = true
         
-        
-        
+        var expensesColors: [UIColor] = []
         var dataEntries: [ChartDataEntry] = []
-        for i in 0..<expenseItems.count {
-            let dataEntry = ChartDataEntry(value: expenseItems[i].cost, xIndex: i)
-            dataEntries.append(dataEntry)
+        for i in 0..<categorisedExpenseItems.count {
+            let green = Double(RandomInt(min: 100, max: 256))
+            let blue = Double(RandomInt(min: 200, max: 256))
+            let color = UIColor (red: CGFloat(0), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+            categorisedExpenseItems[i].color = color
+            expensesColors.append(color)
+            
+            dataEntries.append(ChartDataEntry(value: categorisedExpenseItems[i].totalCost, xIndex: i)
+)
         }
-        
         
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         let pieChartData = PieChartData(xVals: [String](), dataSet: pieChartDataSet)
         //pieChartData.setDrawValues(false)
         expensesPieChart.data = pieChartData
-        
-        var expensesColors: [UIColor] = []
-        for i in 0..<expenseItems.count {
-            //let red = Double(arc4random_uniform(256))
-            let green = Double(RandomInt(min: 100, max: 256))
-            let blue = Double(RandomInt(min: 200, max: 256))
-            
-            let color = UIColor (red: CGFloat(0), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            expenseItems[i].color = color
-            expensesColors.append(color)
-        }
         
         pieChartDataSet.colors = expensesColors
         
@@ -167,15 +173,54 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     }
     
     
+    @IBAction func netIncomDayFilter_IndexChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            filterType = FilterTypes.Last30Days
+            fromDate = NSDate().add(componentsDict: ["month":-1])!.toLocalTime()
+        case 1:
+            filterType = FilterTypes.Last90Days
+            fromDate = NSDate().add(componentsDict: ["month":-3])!.toLocalTime()
+        case 2:
+            filterType = FilterTypes.Last180Days
+            fromDate = NSDate().add(componentsDict: ["month":-6])!.toLocalTime()
+        case 3:
+            filterType = FilterTypes.Last360Days
+            fromDate = NSDate().add(componentsDict: ["month":-12])!.toLocalTime()
+        case 4:
+            filterType = FilterTypes.Last720Days
+            fromDate = NSDate().add(componentsDict: ["month":-24])!.toLocalTime()
+            
+        default:
+            filterType = FilterTypes.Last360Days
+            fromDate = NSDate().add(componentsDict: ["month":-12])!.toLocalTime()
+            
+        }
+        
+        let invoices = inventoryAPI.getInvoices(fromDate: fromDate)
+        let netIncomeExpenseItems = inventoryAPI.getExpenseItems(fromDate: fromDate)
+        buildNetIncomeChart(invoices: invoices, expenseItems: netIncomeExpenseItems)
+    }
+    
+    
     func buildNetIncomeChart(invoices invoices: [Invoice], expenseItems: [ExpenseItem]) {
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         
-        let filterType = FilterTypes.thisYear
+        
         
         var dataPoints = [String]()
         var dateUnits = [[Double]]()
         
-        if filterType == FilterTypes.thisYear {
+        
+        
+        
+        switch filterType {
+            
+        case FilterTypes.Last30Days:
+            
+            break
+            
+        case FilterTypes.Last90Days, FilterTypes.Last180Days, FilterTypes.Last360Days, FilterTypes.Last720Days:
             let lastInvoice = invoices.last!
             let lastExpenseItem = expenseItems.last!
             
@@ -184,9 +229,47 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
                 lastMonth = lastExpenseItem.date.month
             }
             
-            //var invoiceIndex = 0
-            //var expenseIndex = 0
             
+            let today = NSDate().toLocalTime()
+            let minInvoice = invoices.first
+            let minExpenseItem = expenseItems.first
+            var minDate = minInvoice?.date
+            if minExpenseItem?.date < minDate {
+                minDate = minExpenseItem?.date
+            }
+            
+            //for year in (minDate?.year)!...today.year {
+            var i = 0
+            for month in (today.month - filterType.rawValue)...today.month {
+                
+                var monthIndex = month;
+                while(monthIndex <= 0) {
+                    monthIndex += 12
+                }
+                
+                dataPoints.append(months[monthIndex - 1])
+                
+                var date = today.add(componentsDict: ["month":-(filterType.rawValue - i)])!.toLocalTime()
+                //date = "\(date.year)/\(date.month)/01".toDate(formatString: "yyyy/MM/dd")!
+                var invoiceUnit = Double(0)
+                let currentInvoices = invoices.filter({ $0.date.year == date.year && $0.date.month == date.month})
+                for invoice in currentInvoices {
+                    for lineItem in invoice.lineItems {
+                        invoiceUnit += lineItem.getTotalPrice()
+                    }
+                }
+                
+                var expenseUnit = Double(0)
+                let currentExpenses = expenseItems.filter({ $0.date.year == date.year && $0.date.month == month })
+                for expense in currentExpenses {
+                    expenseUnit += expense.cost
+                }
+                
+                dateUnits.append([invoiceUnit, -expenseUnit])
+                i++;
+            }
+            //}
+            /*
             for month in 1...lastMonth {
                 dataPoints.append(months[month - 1])
                 
@@ -198,34 +281,18 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
                     }
                 }
                 
-                /*for invoiceIndex; invoiceIndex < invoices.count; invoiceIndex++ {
-                    if invoices[invoiceIndex].date.month == month {
-                        for lineItem in invoices[invoiceIndex].lineItems {
-                            invoiceUnit += lineItem.getTotalPrice()
-                        }
-                    }
-                }*/
-                
                 var expenseUnit = Double(0)
                 let currentExpenses = expenseItems.filter({ $0.date.month == month })
                 for expense in currentExpenses {
                     expenseUnit += expense.cost
                 }
                 
-                /*for expenseIndex; expenseIndex < expenses.count; expenseIndex++ {
-                    if expenses[expenseIndex].date.month == month {
-                        expenseUnit += expenses[expenseIndex].cost
-                    }
-                }*/
-                
                 dateUnits.append([invoiceUnit, -expenseUnit])
-            }
+            }*/
+            
         }
         
         
-        
-        //let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        //let unitsSold1 = [[60.0,-20], [40,-60], [60,-30], [30,-10], [35,-12], [16,-20]]
         
         var dataEntries: [ChartDataEntry] = []
         var dataEntries1: [BarChartDataEntry] = []

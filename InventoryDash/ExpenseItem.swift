@@ -13,15 +13,13 @@ class ExpenseItem: NSObject {
     var expenseId: Int
     var cost: Double
     var date: NSDate
-    var color: UIColor
     
     var expense: Expense!
     
-    init(expenseId: Int, cost: Double, date: NSDate, color: UIColor) {
+    init(expenseId: Int, cost: Double, date: NSDate) {
         self.expenseId = expenseId
         self.cost = cost
         self.date = date
-        self.color = color
     }
     
 }
