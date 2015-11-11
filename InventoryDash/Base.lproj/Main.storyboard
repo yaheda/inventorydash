@@ -91,12 +91,18 @@
                                         <animations/>
                                         <color key="backgroundColor" red="0.23018704349999999" green="0.77713233230000001" blue="0.31589496140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last 365 Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbY-tw-MdZ">
+                                        <rect key="frame" x="79" y="6" width="168" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TkJ-1W-mGw">
-                                <rect key="frame" x="20" y="195" width="984" height="254"/>
+                                <rect key="frame" x="20" y="195" width="984" height="220"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-eC-kFs">
                                         <rect key="frame" x="8" y="0.0" width="168" height="33"/>
@@ -118,7 +124,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="25" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rP9-Jr-fnO">
-                                        <rect key="frame" x="184" y="8" width="436" height="226"/>
+                                        <rect key="frame" x="184" y="8" width="436" height="204"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -175,7 +181,7 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZk-1T-dpk" customClass="PieChartView" customModule="Charts">
-                                        <rect key="frame" x="628" y="8" width="348" height="226"/>
+                                        <rect key="frame" x="628" y="-10" width="348" height="249"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -184,10 +190,10 @@
                                 <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1j-UY-JjV">
-                                <rect key="frame" x="20" y="457" width="984" height="293"/>
+                                <rect key="frame" x="20" y="423" width="984" height="327"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14g-Tz-KGP" customClass="CombinedChartView" customModule="Charts">
-                                        <rect key="frame" x="184" y="59" width="792" height="226"/>
+                                        <rect key="frame" x="184" y="47" width="792" height="272"/>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -199,47 +205,47 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Net Income" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUb-jH-tkx">
-                                        <rect key="frame" x="8" y="110" width="168" height="21"/>
+                                        <rect key="frame" x="8" y="144" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Expenses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIZ-YN-UEq">
-                                        <rect key="frame" x="30" y="264" width="168" height="21"/>
+                                        <rect key="frame" x="30" y="298" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 17,740" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikC-gq-c8J">
-                                        <rect key="frame" x="8" y="75" width="168" height="21"/>
+                                        <rect key="frame" x="8" y="109" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 39,600" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-3h-IbK">
-                                        <rect key="frame" x="30" y="197" width="168" height="21"/>
+                                        <rect key="frame" x="30" y="231" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R 21,860" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doO-Q2-nvs">
-                                        <rect key="frame" x="31" y="245" width="168" height="21"/>
+                                        <rect key="frame" x="31" y="279" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O3J-lr-2bc">
-                                        <rect key="frame" x="8" y="197" width="14" height="40"/>
+                                        <rect key="frame" x="8" y="231" width="14" height="40"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.23018704349999999" green="0.77713233230000001" blue="0.31589496140000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-xE-dt0">
-                                        <rect key="frame" x="8" y="245" width="14" height="40"/>
+                                        <rect key="frame" x="8" y="279" width="14" height="40"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.15410047769546509" green="0.41306763887405396" blue="0.69063264131546021" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Income" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HL-3x-V5c">
-                                        <rect key="frame" x="30" y="216" width="168" height="21"/>
+                                        <rect key="frame" x="30" y="250" width="168" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="highlightedColor"/>
@@ -283,10 +289,20 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="expensesLabel" destination="doO-Q2-nvs" id="fQ7-a0-BNi"/>
                         <outlet property="expensesPieChart" destination="bZk-1T-dpk" id="RkZ-Uw-kzz"/>
                         <outlet property="expensesTableView" destination="rP9-Jr-fnO" id="erw-pg-03e"/>
+                        <outlet property="incomeLabel" destination="Rdf-3h-IbK" id="FgF-og-dtz"/>
+                        <outlet property="latestIncomeLabel" destination="6sU-Dr-nbF" id="aSQ-mW-bkL"/>
                         <outlet property="netIncomeChart" destination="14g-Tz-KGP" id="Fby-bG-lnZ"/>
                         <outlet property="netIncomeDayFilter" destination="eRU-90-sid" id="6pJ-Uy-ZMr"/>
+                        <outlet property="netIncomeLabel" destination="ikC-gq-c8J" id="gIq-xM-cIn"/>
+                        <outlet property="openInvoicesDetailLabel" destination="M4d-PG-QYE" id="rbj-uh-xNi"/>
+                        <outlet property="openInvoicesValueLabel" destination="ooL-rq-SLc" id="2aW-oK-fPK"/>
+                        <outlet property="overdueInvoicesDetailLabel" destination="u8N-Sm-UdX" id="eUG-IS-cc2"/>
+                        <outlet property="overdueInvoicesValueLabel" destination="LQm-vY-Mmq" id="YS2-B7-OBl"/>
+                        <outlet property="paidInvoicesDetailLabel" destination="ZZO-25-YEZ" id="0PZ-D9-f57"/>
+                        <outlet property="paidInvoicesValueLabel" destination="ySF-kt-plI" id="q0q-Nl-jmu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

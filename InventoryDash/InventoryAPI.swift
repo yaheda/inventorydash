@@ -44,8 +44,8 @@ class InventoryAPI: NSObject {
         expenseItems = [ExpenseItem]()
         for i in 1...11 {
             let month = i < 10 ? "0\(i)" : i.description
-            //let date = "2015/\(month)/01".toDate(formatString: "yyyy/MM/dd")!
-            let date = NSDate.date(fromString: "2015-\(month)-01T00:00:00.000Z", format: DateFormat.ISO8601)!
+            let date = "2015/\(month)/01".toDate(formatString: "yyyy/MM/dd")!
+            //let date = NSDate.date(fromString: "2015-\(month)-01T00:00:00.000Z", format: DateFormat.ISO8601)!
             expenseItems.append(ExpenseItem(expenseId: 1, cost: Double(RandomInt(min: 5000, max: 8000)), date: date))
             expenseItems.append(ExpenseItem(expenseId: 2, cost: Double(RandomInt(min: 3000, max: 4500)), date: date))
             expenseItems.append(ExpenseItem(expenseId: 3, cost: Double(RandomInt(min: 3000, max: 4000)), date: date))
@@ -77,9 +77,10 @@ class InventoryAPI: NSObject {
         invoices = [Invoice]()
         for i in 1...11 {
             let month = i < 10 ? "0\(i)" : i.description
-            //let date = "2015/\(month)/01".toDate(formatString: "yyyy/MM/dd")!
-            let date = NSDate.date(fromString: "2015-\(month)-05T22:10:55.200Z", format: DateFormat.ISO8601)!
-            invoices.append(Invoice(id: i, date: date))
+            let date = "2015/\(month)/05".toDate(formatString: "yyyy/MM/dd")!
+            //let date = NSDate.date(fromString: "2015-\(month)-05T22:10:55.200Z", format: DateFormat.ISO8601)!
+            let invoiceStatus = InvoiceStatus(rawValue: RandomInt(min: 0, max: 1))!
+            invoices.append(Invoice(id: i, date: date, invoiceStatus: invoiceStatus))
         }
     }
     
