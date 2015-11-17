@@ -52,7 +52,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     
     var categorisedExpenseItems : [CategorisedExpenseItemViewModel] = []
     
-    var inventoryAPI: InventoryAPI!
+    //var inventoryAPI: InventoryAPI!
     
     var fromDate: NSDate!
     var filterType: FilterTypes = FilterTypes.Last360Days
@@ -97,14 +97,14 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         self.sideMenuController()?.sideMenu?.delegate = self
         expensesPieChart.delegate = self
         
-        inventoryAPI = InventoryAPI()
+        //inventoryAPI = InventoryAPI()
         
         let last12MonthDate = NSDate().add(componentsDict: ["month":-12])!//.toLocalTime()
-        let invoiceItems = inventoryAPI.getInvoices(fromDate: last12MonthDate)
+        let invoiceItems = InventoryAPI.instance.getInvoices(fromDate: last12MonthDate)
         updateIncomePanel(invoices: invoiceItems)
         
         let last30DaysDate = NSDate().add(componentsDict: ["month":-1])!//.toLocalTime()
-        let expenseItems = inventoryAPI.getExpenseItems(fromDate: last30DaysDate)
+        let expenseItems = InventoryAPI.instance.getExpenseItems(fromDate: last30DaysDate)
         categorisedExpenseItems = getCategoriseExpenseItems(expenseItems)
         
         buidExpensesPieChart(categorisedExpenseItems: categorisedExpenseItems)
@@ -114,8 +114,8 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         netIncomeDayFilter.selectedSegmentIndex = 1
         self.netIncomDayFilter_IndexChanged(netIncomeDayFilter)
         
-        let invoices = inventoryAPI.getInvoices(fromDate: fromDate)
-        let netIncomeExpenseItems = inventoryAPI.getExpenseItems(fromDate: fromDate)
+        let invoices = InventoryAPI.instance.getInvoices(fromDate: fromDate)
+        let netIncomeExpenseItems = InventoryAPI.instance.getExpenseItems(fromDate: fromDate)
         buildNetIncomeChart(invoices: invoices, expenseItems: netIncomeExpenseItems)
         
         
@@ -286,8 +286,8 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         
         fromDate = "\(fromDate.year)/\(fromDate.month)/01".toDate(formatString: "yyyy/MM/dd")!.toLocalTime()
         
-        let invoices = inventoryAPI.getInvoices(fromDate: fromDate)
-        let netIncomeExpenseItems = inventoryAPI.getExpenseItems(fromDate: fromDate)
+        let invoices = InventoryAPI.instance.getInvoices(fromDate: fromDate)
+        let netIncomeExpenseItems = InventoryAPI.instance.getExpenseItems(fromDate: fromDate)
         buildNetIncomeChart(invoices: invoices, expenseItems: netIncomeExpenseItems)
     }
     

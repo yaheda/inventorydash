@@ -42,7 +42,7 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // return the number of rows
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -57,11 +57,17 @@ class MenuTableViewController: UITableViewController {
             cell!.selectedBackgroundView = selectedBackgroundView
         }
         
-        if indexPath.row == 0 {
-            cell!.textLabel?.text = "Dashboard"
+        var navigationText = "Dashboard"
+        switch indexPath.row {
+            
+        case 0: navigationText = "Dashboard"
+        case 1: navigationText = "Customers"
+            
+        default: navigationText = "Menu"
+            
         }
         
-        
+        cell!.textLabel?.text = navigationText
         
         return cell!
     }
@@ -88,7 +94,7 @@ class MenuTableViewController: UITableViewController {
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DashboardViewController")
             break
         case 1:
-            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController2")
+            destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CustomerViewController")
             break
         case 2:
             destViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController3")

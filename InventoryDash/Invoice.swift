@@ -20,17 +20,21 @@ class Invoice: NSObject {
     var date: NSDate
     var invoiceStatus: InvoiceStatus
     
+    var customerId: Int
+    
     var lineItems: [LineItem]!
 
-    init(id: Int, date: NSDate) {
+    init(id: Int, date: NSDate, customerId: Int) {
         self.id = id
         self.date = date
+        self.customerId = customerId
         self.invoiceStatus = InvoiceStatus.UnPaid
     }
     
-    init(id: Int, date: NSDate, invoiceStatus: InvoiceStatus) {
+    init(id: Int, date: NSDate, customerId: Int, invoiceStatus: InvoiceStatus) {
         self.id = id
         self.date = date
+        self.customerId = customerId
         self.invoiceStatus = invoiceStatus
     }
     
@@ -42,19 +46,6 @@ class Invoice: NSObject {
         return amountDue
     }
     
-    func getStatus() -> String {
-        if invoiceStatus == InvoiceStatus.Paid {
-            return "Paid"
-        }
-        
-        let compareDate = NSDate().add(componentsDict: ["day":-(30)])!
-        if date < compareDate {
-            return "Overdue"
-        }
-        
-        return "Open"
-    }
-    
     func isOverdue() -> Bool {
         let compareDate = NSDate().add(componentsDict: ["day":-(30)])!
         if date < compareDate {
@@ -63,4 +54,8 @@ class Invoice: NSObject {
         
         return false
     }
+    
+    
+
+
 }

@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		738AF5D751A62B6152F653F8 /* Pods_InventoryDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394356D5B8772F5F94054ED7 /* Pods_InventoryDash.framework */; };
-		D60E34411BE65ACC00875785 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E34401BE65ACC00875785 /* ExpenseItem.swift */; settings = {ASSET_TAGS = (); }; };
-		D61161C61BDBA39F0006A321 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161C51BDBA39F0006A321 /* Helper.swift */; settings = {ASSET_TAGS = (); }; };
-		D61161D11BDCBBFD0006A321 /* DashExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		D61161D31BDCD71D0006A321 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D21BDCD71C0006A321 /* Expense.swift */; settings = {ASSET_TAGS = (); }; };
+		D60E34411BE65ACC00875785 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E34401BE65ACC00875785 /* ExpenseItem.swift */; };
+		D61161C61BDBA39F0006A321 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161C51BDBA39F0006A321 /* Helper.swift */; };
+		D61161D11BDCBBFD0006A321 /* DashExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */; };
+		D61161D31BDCD71D0006A321 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61161D21BDCD71C0006A321 /* Expense.swift */; };
+		D61349091BF516CC0080C4AF /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61349081BF516CC0080C4AF /* Customer.swift */; };
 		D63A348B1BD3A1BA00EFFA2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A348A1BD3A1BA00EFFA2F /* AppDelegate.swift */; };
 		D63A348D1BD3A1BA00EFFA2F /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A348C1BD3A1BA00EFFA2F /* DashboardViewController.swift */; };
 		D63A34901BD3A1BA00EFFA2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63A348E1BD3A1BA00EFFA2F /* Main.storyboard */; };
@@ -19,15 +20,19 @@
 		D63A34951BD3A1BA00EFFA2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D63A34931BD3A1BA00EFFA2F /* LaunchScreen.storyboard */; };
 		D63A34A01BD3A1BA00EFFA2F /* InventoryDashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A349F1BD3A1BA00EFFA2F /* InventoryDashTests.swift */; };
 		D63A34AB1BD3A1BA00EFFA2F /* InventoryDashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A34AA1BD3A1BA00EFFA2F /* InventoryDashUITests.swift */; };
-		D64DB67F1BE3EDB30035CCD6 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */; settings = {ASSET_TAGS = (); }; };
-		D64DB6811BE3F3D90035CCD6 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6801BE3F3D90035CCD6 /* Invoice.swift */; settings = {ASSET_TAGS = (); }; };
-		D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		D6577EBF1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */; settings = {ASSET_TAGS = (); }; };
-		D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8981BD576A1003251B7 /* ENSideMenu.swift */; settings = {ASSET_TAGS = (); }; };
-		D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
-		D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB89C1BD577E2003251B7 /* NavigationController.swift */; settings = {ASSET_TAGS = (); }; };
-		D66EB89F1BD57979003251B7 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB89E1BD57979003251B7 /* MenuTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D6E9B0AB1BE1653A00ED6D8C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9B0AA1BE1653A00ED6D8C /* Product.swift */; settings = {ASSET_TAGS = (); }; };
+		D63EF0661BF66FB4001BE0C9 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63EF0651BF66FB4001BE0C9 /* CustomerViewController.swift */; };
+		D64DB67F1BE3EDB30035CCD6 /* LineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */; };
+		D64DB6811BE3F3D90035CCD6 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6801BE3F3D90035CCD6 /* Invoice.swift */; };
+		D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */; };
+		D6577EBF1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */; };
+		D66319831BFBBF5900C32775 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66319821BFBBF5900C32775 /* Global.swift */; };
+		D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8981BD576A1003251B7 /* ENSideMenu.swift */; };
+		D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */; };
+		D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB89C1BD577E2003251B7 /* NavigationController.swift */; };
+		D66EB89F1BD57979003251B7 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB89E1BD57979003251B7 /* MenuTableViewController.swift */; };
+		D6E9B0AB1BE1653A00ED6D8C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9B0AA1BE1653A00ED6D8C /* Product.swift */; };
+		D6F45CA01BF7046500FB501B /* IncomeDashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F45C9F1BF7046500FB501B /* IncomeDashViewController.swift */; };
+		D6F45CA21BF71F7F00FB501B /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F45CA11BF71F7F00FB501B /* CustomerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,7 @@
 		D61161C51BDBA39F0006A321 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		D61161D21BDCD71C0006A321 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		D61349081BF516CC0080C4AF /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		D63A34871BD3A1BA00EFFA2F /* InventoryDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D63A348A1BD3A1BA00EFFA2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D63A348C1BD3A1BA00EFFA2F /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -68,15 +74,19 @@
 		D63A34A61BD3A1BA00EFFA2F /* InventoryDashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InventoryDashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D63A34AA1BD3A1BA00EFFA2F /* InventoryDashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryDashUITests.swift; sourceTree = "<group>"; };
 		D63A34AC1BD3A1BA00EFFA2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D63EF0651BF66FB4001BE0C9 /* CustomerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
 		D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineItem.swift; sourceTree = "<group>"; };
 		D64DB6801BE3F3D90035CCD6 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		D64DB6831BE3F6940035CCD6 /* InventoryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryAPI.swift; sourceTree = "<group>"; };
 		D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorisedExpenseItemViewModel.swift; sourceTree = "<group>"; };
+		D66319821BFBBF5900C32775 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		D66EB8981BD576A1003251B7 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D66EB89C1BD577E2003251B7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D66EB89E1BD57979003251B7 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		D6E9B0AA1BE1653A00ED6D8C /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		D6F45C9F1BF7046500FB501B /* IncomeDashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeDashViewController.swift; sourceTree = "<group>"; };
+		D6F45CA11BF71F7F00FB501B /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D61161C51BDBA39F0006A321 /* Helper.swift */,
+				D66319821BFBBF5900C32775 /* Global.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -188,6 +199,15 @@
 			path = InventoryDashUITests;
 			sourceTree = "<group>";
 		};
+		D63EF0671BF66FBD001BE0C9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D63A348C1BD3A1BA00EFFA2F /* DashboardViewController.swift */,
+				D63EF0651BF66FB4001BE0C9 /* CustomerViewController.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		D64DB6821BE3F66E0035CCD6 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +221,7 @@
 			children = (
 				D61161D01BDCBBFD0006A321 /* DashExpenseTableViewCell.swift */,
 				D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */,
+				D6F45CA11BF71F7F00FB501B /* CustomerTableViewCell.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -217,7 +238,8 @@
 		D6F260E71BD41D99007DD24B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D63A348C1BD3A1BA00EFFA2F /* DashboardViewController.swift */,
+				D6F45C9E1BF7042D00FB501B /* Components */,
+				D63EF0671BF66FBD001BE0C9 /* Scenes */,
 				D66EB89C1BD577E2003251B7 /* NavigationController.swift */,
 				D66EB89E1BD57979003251B7 /* MenuTableViewController.swift */,
 			);
@@ -232,6 +254,7 @@
 				D64DB67E1BE3EDB30035CCD6 /* LineItem.swift */,
 				D64DB6801BE3F3D90035CCD6 /* Invoice.swift */,
 				D60E34401BE65ACC00875785 /* ExpenseItem.swift */,
+				D61349081BF516CC0080C4AF /* Customer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -242,6 +265,14 @@
 				D66EB8971BD57692003251B7 /* ENSlideMenu */,
 			);
 			name = Libs;
+			sourceTree = "<group>";
+		};
+		D6F45C9E1BF7042D00FB501B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D6F45C9F1BF7046500FB501B /* IncomeDashViewController.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,16 +461,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */,
+				D6F45CA21BF71F7F00FB501B /* CustomerTableViewCell.swift in Sources */,
+				D63EF0661BF66FB4001BE0C9 /* CustomerViewController.swift in Sources */,
 				D64DB6811BE3F3D90035CCD6 /* Invoice.swift in Sources */,
 				D64DB67F1BE3EDB30035CCD6 /* LineItem.swift in Sources */,
 				D61161C61BDBA39F0006A321 /* Helper.swift in Sources */,
 				D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */,
 				D66EB89F1BD57979003251B7 /* MenuTableViewController.swift in Sources */,
+				D66319831BFBBF5900C32775 /* Global.swift in Sources */,
+				D6F45CA01BF7046500FB501B /* IncomeDashViewController.swift in Sources */,
 				D61161D11BDCBBFD0006A321 /* DashExpenseTableViewCell.swift in Sources */,
 				D60E34411BE65ACC00875785 /* ExpenseItem.swift in Sources */,
 				D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */,
 				D61161D31BDCD71D0006A321 /* Expense.swift in Sources */,
 				D63A348D1BD3A1BA00EFFA2F /* DashboardViewController.swift in Sources */,
+				D61349091BF516CC0080C4AF /* Customer.swift in Sources */,
 				D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */,
 				D6577EBF1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift in Sources */,
 				D6E9B0AB1BE1653A00ED6D8C /* Product.swift in Sources */,
@@ -588,7 +624,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = InventoryDash/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kmer.nosuca.InventoryDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -604,7 +640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = InventoryDash/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kmer.nosuca.InventoryDash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
