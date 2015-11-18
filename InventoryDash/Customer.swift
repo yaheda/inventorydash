@@ -26,6 +26,16 @@ class Customer: NSObject {
         self.invoices = [Invoice]()
     }
     
+    func getUnpaidInvoices() -> [Invoice] {
+        var results = [Invoice]()
+        for invoice in invoices {
+            if invoice.invoiceStatus == .UnPaid {
+                results.append(invoice)
+            }
+        }
+        return results
+    }
+    
     func getOpenInvoices() -> [Invoice] {
         var results = [Invoice]()
         for invoice in invoices {

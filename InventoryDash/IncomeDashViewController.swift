@@ -35,6 +35,7 @@ class IncomeDashViewController: UIViewController {
     
     @IBOutlet weak var openInvoicesView: UIView!
     @IBOutlet weak var overdueInvoicesView: UIView!
+    @IBOutlet weak var paidInvoicesView: UIView!
     
     
     var openInvoicesValue: Double = 0.0 {
