@@ -25,16 +25,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     
     var months: [String]!
     
-    
-    @IBOutlet weak var openInvoicesValueLabel: UILabel!
-    @IBOutlet weak var openInvoicesDetailLabel: UILabel!
-    
-    @IBOutlet weak var overdueInvoicesValueLabel: UILabel!
-    @IBOutlet weak var overdueInvoicesDetailLabel: UILabel!
-    
-    @IBOutlet weak var paidInvoicesValueLabel: UILabel!
-    @IBOutlet weak var paidInvoicesDetailLabel: UILabel!
-    
+    @IBOutlet weak var incomeView: UIView!
     
     @IBOutlet weak var expensesTableView: UITableView!
     @IBOutlet weak var expensesPieChart: PieChartView!
@@ -58,38 +49,6 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
     var filterType: FilterTypes = FilterTypes.Last360Days
     
     
-    var openInvoicesValue: Double = 0.0 {
-        didSet {
-            openInvoicesValueLabel.text = "R \(openInvoicesValue)"
-        }
-    }
-    var openInvoicesCount: Int = 0 {
-        didSet {
-            openInvoicesDetailLabel.text = "\(openInvoicesCount) Open Invoices"
-        }
-    }
-    var overdueInvoicesValue: Double = 0.0 {
-        didSet {
-            overdueInvoicesValueLabel.text = "R \(overdueInvoicesValue)"
-        }
-    }
-    var overdueInvoicesCount: Int = 0 {
-        didSet {
-            overdueInvoicesDetailLabel.text = "\(overdueInvoicesCount) Overdue"
-        }
-    }
-    var paidInvoicesValue: Double = 0.0 {
-        didSet {
-            paidInvoicesValueLabel.text = "R \(paidInvoicesValue)"
-        }
-    }
-    var paidInvoicesCount: Int = 0 {
-        didSet {
-            paidInvoicesDetailLabel.text = "\(paidInvoicesCount) Paid Last 30 Days"
-        }
-    }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,11 +56,15 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         self.sideMenuController()?.sideMenu?.delegate = self
         expensesPieChart.delegate = self
         
-        //inventoryAPI = InventoryAPI()
+        
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        let incomeDashViewController = mainStoryboard.instantiateViewControllerWithIdentifier("IncomeDashViewController") as! IncomeDashViewController
+        incomeView.addSubview(incomeDashViewController.view)
         
         let last12MonthDate = NSDate().add(componentsDict: ["month":-12])!//.toLocalTime()
         let invoiceItems = InventoryAPI.instance.getInvoices(fromDate: last12MonthDate)
-        updateIncomePanel(invoices: invoiceItems)
+        incomeDashViewController.updateIncomePanel(invoices: invoiceItems)
         
         let last30DaysDate = NSDate().add(componentsDict: ["month":-1])!//.toLocalTime()
         let expenseItems = InventoryAPI.instance.getExpenseItems(fromDate: last30DaysDate)
@@ -146,34 +109,6 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         return categorisedExpenseItems
     }
     
-    func updateIncomePanel(invoices invoices: [Invoice]) {
-        
-        openInvoicesValue = 0.0
-        openInvoicesCount = 0
-        overdueInvoicesValue = 0.0
-        overdueInvoicesCount = 0
-        paidInvoicesValue = 0.0
-        paidInvoicesCount = 0
-        
-        for invoice in invoices {
-            if (invoice.invoiceStatus == InvoiceStatus.Paid) {
-                let last30Days = NSDate().add(componentsDict: ["month":-1])
-                if (invoice.date > last30Days) {
-                    paidInvoicesCount++
-                    paidInvoicesValue += invoice.getAmountDue()
-                }
-            } else {
-                if (invoice.isOverdue() == true) {
-                    overdueInvoicesCount++
-                    overdueInvoicesValue += invoice.getAmountDue()
-                } else {
-                    openInvoicesCount++
-                    openInvoicesValue += invoice.getAmountDue()
-                }
-            }
-        }
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -189,7 +124,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         }
         
         cell.colorView.backgroundColor = categorisedExpenseItems[indexPath.row].color
-        cell.priceLabel.text = "R \(categorisedExpenseItems[indexPath.row].totalCost)"
+        cell.priceLabel.text = Global.instance.currencyFormatter.stringFromNumber(categorisedExpenseItems[indexPath.row].totalCost)
         cell.titleLabel.text = categorisedExpenseItems[indexPath.row].expenseName
         cell.quantityLabel.text = "x\(categorisedExpenseItems[indexPath.row].quantity)"
         
@@ -241,7 +176,7 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
             dataEntries.append(ChartDataEntry(value: categorisedExpenseItems[i].totalCost, xIndex: i))
         }
         
-        latestIncomeLabel.text = "R \(expenses)"
+        latestIncomeLabel.text = Global.instance.currencyFormatter.stringFromNumber(expenses)
         
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
         let pieChartData = PieChartData(xVals: [String](), dataSet: pieChartDataSet)
@@ -388,9 +323,9 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
             expenses += currentExpenses
         }
         
-        netIncomeLabel.text = "R \(netIncome)"
-        incomeLabel.text = "R \(income)"
-        expensesLabel.text = "R \(-expenses)"
+        netIncomeLabel.text = Global.instance.currencyFormatter.stringFromNumber(netIncome)
+        incomeLabel.text = Global.instance.currencyFormatter.stringFromNumber(income)
+        expensesLabel.text = Global.instance.currencyFormatter.stringFromNumber(-expenses)
         
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Net Income")
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
@@ -409,12 +344,12 @@ class DashboardViewController: UIViewController, ENSideMenuDelegate, ChartViewDe
         netIncomeChart.descriptionText = ""
         netIncomeChart.legend.enabled = false
         
-        let prefix = "R "
-        let formatter: NSNumberFormatter = NSNumberFormatter()
-        formatter.positivePrefix = prefix
-        formatter.negativePrefix = prefix
-        netIncomeChart.leftAxis.valueFormatter = formatter
-        netIncomeChart.rightAxis.valueFormatter = formatter
+        //let prefix = "R "
+        //let formatter: NSNumberFormatter = NSNumberFormatter()
+        //formatter.positivePrefix = prefix
+        //formatter.negativePrefix = prefix
+        netIncomeChart.leftAxis.valueFormatter = Global.instance.currencyFormatter
+        netIncomeChart.rightAxis.valueFormatter = Global.instance.currencyFormatter
         
         netIncomeChart.animate(xAxisDuration: 0.2, yAxisDuration: 0.2)
     }

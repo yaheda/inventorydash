@@ -45,7 +45,7 @@ class IncomeDashViewController: UIViewController {
     }
     var openInvoicesCount: Int = 0 {
         didSet {
-            openInvoicesDetailLabel.text = "\(openInvoicesCount) Open Invoices"
+            openInvoicesDetailLabel.text = "\(openInvoicesCount) Open \(incomeType)"
         }
     }
     var overdueInvoicesValue: Double = 0.0 {
@@ -69,19 +69,18 @@ class IncomeDashViewController: UIViewController {
         }
     }
     
+    var last30Days: NSDate!
+    var incomeType: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         openInvoicesView.backgroundColor = UIColor.flatYellowColor()
-        
-        //let tapRec = UITapGestureRecognizer()
-        //tapRec.addTarget(openInvoicesView, action: "test")
-        
-        //openInvoicesView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "test:"))
-        //openInvoicesView.addge
+        last30Days = NSDate().add(componentsDict: ["month":-1])
     }
     
     func updateIncomePanel(invoices invoices: [Invoice]) {
+        incomeType = "Invoice"
         
         openInvoicesValue = 0.0
         openInvoicesCount = 0
@@ -92,7 +91,6 @@ class IncomeDashViewController: UIViewController {
         
         for invoice in invoices {
             if (invoice.invoiceStatus == InvoiceStatus.Paid) {
-                let last30Days = NSDate().add(componentsDict: ["month":-1])
                 if (invoice.date > last30Days) {
                     paidInvoicesCount++
                     paidInvoicesValue += invoice.getAmountDue()
@@ -104,6 +102,34 @@ class IncomeDashViewController: UIViewController {
                 } else {
                     openInvoicesCount++
                     openInvoicesValue += invoice.getAmountDue()
+                }
+            }
+        }
+    }
+    
+    func updateIncomePanel(expenseItems expenseItems: [ExpenseItem]) {
+        incomeType = "Bill"
+
+        openInvoicesValue = 0.0
+        openInvoicesCount = 0
+        overdueInvoicesValue = 0.0
+        overdueInvoicesCount = 0
+        paidInvoicesValue = 0.0
+        paidInvoicesCount = 0
+        
+        for expenseItem in expenseItems {
+            if (expenseItem.invoiceStatus == InvoiceStatus.Paid) {
+                if (expenseItem.date > last30Days) {
+                    paidInvoicesCount++
+                    paidInvoicesValue += expenseItem.cost
+                }
+            } else {
+                if (expenseItem.isOverdue() == true) {
+                    overdueInvoicesCount++
+                    overdueInvoicesValue += expenseItem.cost
+                } else {
+                    openInvoicesCount++
+                    openInvoicesValue += expenseItem.cost
                 }
             }
         }
