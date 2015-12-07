@@ -30,6 +30,9 @@
 		D6577EBF1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */; };
 		D659321E1C07961A0092670D /* PayrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659321D1C07961A0092670D /* PayrollViewController.swift */; };
 		D66319831BFBBF5900C32775 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66319821BFBBF5900C32775 /* Global.swift */; };
+		D66C98D81C0AF6E0005D1D04 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C98D71C0AF6E0005D1D04 /* Employee.swift */; };
+		D66C98DA1C0AFE18005D1D04 /* EmployeeContribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C98D91C0AFE18005D1D04 /* EmployeeContribution.swift */; };
+		D66C98DC1C0B0063005D1D04 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66C98DB1C0B0063005D1D04 /* EmployeeTableViewCell.swift */; };
 		D66EB89A1BD576A1003251B7 /* ENSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8981BD576A1003251B7 /* ENSideMenu.swift */; };
 		D66EB89B1BD576A1003251B7 /* ENSideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */; };
 		D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66EB89C1BD577E2003251B7 /* NavigationController.swift */; };
@@ -88,6 +91,9 @@
 		D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorisedExpenseItemViewModel.swift; sourceTree = "<group>"; };
 		D659321D1C07961A0092670D /* PayrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayrollViewController.swift; sourceTree = "<group>"; };
 		D66319821BFBBF5900C32775 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		D66C98D71C0AF6E0005D1D04 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		D66C98D91C0AFE18005D1D04 /* EmployeeContribution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeContribution.swift; sourceTree = "<group>"; };
+		D66C98DB1C0B0063005D1D04 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		D66EB8981BD576A1003251B7 /* ENSideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenu.swift; sourceTree = "<group>"; };
 		D66EB8991BD576A1003251B7 /* ENSideMenuNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENSideMenuNavigationController.swift; sourceTree = "<group>"; };
 		D66EB89C1BD577E2003251B7 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -233,6 +239,7 @@
 				D6577EBE1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift */,
 				D6F45CA11BF71F7F00FB501B /* CustomerTableViewCell.swift */,
 				D6244E311C01B6810090A2BA /* VendorTableViewCell.swift */,
+				D66C98DB1C0B0063005D1D04 /* EmployeeTableViewCell.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -267,6 +274,8 @@
 				D60E34401BE65ACC00875785 /* ExpenseItem.swift */,
 				D61349081BF516CC0080C4AF /* Customer.swift */,
 				D6244E2F1C00997A0090A2BA /* Vendor.swift */,
+				D66C98D71C0AF6E0005D1D04 /* Employee.swift */,
+				D66C98D91C0AFE18005D1D04 /* EmployeeContribution.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -477,6 +486,7 @@
 				D6F45CA21BF71F7F00FB501B /* CustomerTableViewCell.swift in Sources */,
 				D63EF0661BF66FB4001BE0C9 /* CustomerViewController.swift in Sources */,
 				D6244E2E1BFFA9980090A2BA /* VendorViewController.swift in Sources */,
+				D66C98DC1C0B0063005D1D04 /* EmployeeTableViewCell.swift in Sources */,
 				D64DB6811BE3F3D90035CCD6 /* Invoice.swift in Sources */,
 				D6244E321C01B6810090A2BA /* VendorTableViewCell.swift in Sources */,
 				D64DB67F1BE3EDB30035CCD6 /* LineItem.swift in Sources */,
@@ -490,12 +500,14 @@
 				D60E34411BE65ACC00875785 /* ExpenseItem.swift in Sources */,
 				D66EB89D1BD577E2003251B7 /* NavigationController.swift in Sources */,
 				D61161D31BDCD71D0006A321 /* Expense.swift in Sources */,
+				D66C98D81C0AF6E0005D1D04 /* Employee.swift in Sources */,
 				D63A348D1BD3A1BA00EFFA2F /* DashboardViewController.swift in Sources */,
 				D61349091BF516CC0080C4AF /* Customer.swift in Sources */,
 				D64DB6841BE3F6940035CCD6 /* InventoryAPI.swift in Sources */,
 				D6577EBF1BE8F33D00CC44F0 /* CategorisedExpenseItemViewModel.swift in Sources */,
 				D6E9B0AB1BE1653A00ED6D8C /* Product.swift in Sources */,
 				D63A348B1BD3A1BA00EFFA2F /* AppDelegate.swift in Sources */,
+				D66C98DA1C0AFE18005D1D04 /* EmployeeContribution.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

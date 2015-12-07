@@ -11,13 +11,14 @@ import SwiftDate
 
 class InventoryAPI: NSObject {
 
-    var expenses: [Expense]!
-    var expenseItems: [ExpenseItem]!
-    var products: [Product]!
-    var invoices: [Invoice]!
-    var lineItems: [LineItem]!
-    var customers: [Customer]!
-    var vendors: [Vendor]!
+    private var expenses: [Expense]!
+    private var expenseItems: [ExpenseItem]!
+    private var products: [Product]!
+    private var invoices: [Invoice]!
+    private var lineItems: [LineItem]!
+    private var customers: [Customer]!
+    private var vendors: [Vendor]!
+    private var employees: [Employee]!
     
     private override init() {
         super.init()
@@ -29,6 +30,7 @@ class InventoryAPI: NSObject {
         initLineItems()
         initCustomers()
         initVendors()
+        initEmployees()
     }
     
     static let instance = InventoryAPI()
@@ -54,7 +56,7 @@ class InventoryAPI: NSObject {
     
     private func initExpensesItems() {
         expenseItems = [ExpenseItem]()
-        for i in 1...11 {
+        for i in 1...12 {
             let month = i < 10 ? "0\(i)" : i.description
             let date = "2015/\(month)/01".toDate(formatString: "yyyy/MM/dd")!
             //let date = NSDate.date(fromString: "2015-\(month)-01T00:00:00.000Z", format: DateFormat.ISO8601)!
@@ -228,5 +230,32 @@ class InventoryAPI: NSObject {
             vendor.expenseItems = getExpenseItems(vendorId: vendor.id)
         }
         return vendors
+    }
+    
+    
+    // Mark: - Employees
+    
+    private func initEmployees() {
+        employees = [Employee]()
+        employees.append(Employee(id: 1, name: "Derek", surname: "Carr", mobile: "0843657364", email: "derek@nosuca.com", position: "Cheif Executive Officer", salary: 150000))
+        employees.append(Employee(id: 2, name: "Mukarram", surname: "Mohammad", mobile: "0798763546", email: "mukarram@nosuca.com", position: "Chief Financial Officier", salary: 130000))
+        employees.append(Employee(id: 3, name: "Regina", surname: "Bradley", mobile: "0826457645", email: "regina@nosuca.com", position: "Commumity Manager", salary: 45000))
+        employees.append(Employee(id: 4, name: "Mike", surname: "Lambert", mobile: "0823455432", email: "mike@nosuca.com", position: "Head of Human Resources", salary: 50000))
+        employees.append(Employee(id: 5, name: "Brandi", surname: "Kennedy", mobile: "0734563546", email: "brandi@nosuca.com", position: "Receptionist", salary: 29000))
+        employees.append(Employee(id: 6, name: "Ethel", surname: "Copeland", mobile: "0728746573", email: "ethel@nosuca.com", position: "Office Clerk", salary: 30000))
+        employees.append(Employee(id: 7, name: "Bernadette", surname: "Brewer", mobile: "0843762547", email: "bernadette@nosuca.com", position: "Attorney at Law", salary: 90000))
+        employees.append(Employee(id: 8, name: "Yvonne", surname: "Ortega", mobile: "0897562223", email: "yvonne@nosuca.com", position: "Software Engineer", salary: 65000))
+        employees.append(Employee(id: 9, name: "Lynne", surname: "Miller", mobile: "0837876342", email: "lynne@nosuca.com", position: "Internal Auditor", salary: 75000))
+        employees.append(Employee(id: 10, name: "Ameen", surname: "Siddiqui", mobile: "0847655565", email: "ameennosuca.com", position: "Office Clerk", salary: 40000))
+        employees.append(Employee(id: 11, name: "Karole", surname: "Spangler", mobile: "0729874654", email: "karole@nosuca.com", position: "Marketing Manager", salary: 70000))
+        employees.append(Employee(id: 12, name: "Fakeeha", surname: "Rassi", mobile: "0823456457", email: "fakeeha@nosuca.com", position: "Software Engineer", salary: 80000))
+        
+        for i in 0..<employees.count {
+            employees[i].employeeContributions.append(EmployeeContribution(employeeContributionType: EmployeeContributionType.Medical, cost: RandomDouble(min: 1000, max: 5000)))
+        }
+    }
+    
+    func getEmployees() -> [Employee] {
+        return employees
     }
 }
